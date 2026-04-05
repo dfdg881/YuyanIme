@@ -1,9 +1,7 @@
 name: Build and Release YuyanIme APK
 # 触发条件：当推送符合 'v*' 格式的标签时触发，例如 v1.0.0
 on:
-  push:
-    tags:
-      - 'v*'
+    workflow_dispatch:  # 手动触发
 jobs:
   build:
     name: Build and Sign APK
@@ -32,19 +30,15 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build Release APK
-        run: ./gradlew assembleOffline
+        run: ./gradlew assembleOnline
         env:
           RELEASE_STORE_FILE: ${{ secrets.RELEASE_STORE_FILE }}
           RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
           RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
           RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
 
-      - name: Upload APKs to Release
-        uses: softprops/action-gh-release@v2
+        - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
-          files: |
-            app/build/outputs/apk/offline/release/*.apk
-            app/build/outputs/apk/offline/debug/*.apk
-          generate_release_notes: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: Online apk
+          path: app/build/outputs/apk/online/release/*.apk
