@@ -36,7 +36,7 @@ jobs:
 
       # Step 5: 构建 Release APK
       - name: Build Release APK
-        run: ./gradlew assembleOnline
+        run: ./gradlew assembleRelease
         env:
           RELEASE_STORE_FILE: ${{ secrets.RELEASE_STORE_FILE }}
           RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
