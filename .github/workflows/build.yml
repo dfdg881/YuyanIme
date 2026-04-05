@@ -48,4 +48,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Online apk
-          path: app/build/outputs/apk/online/release/*.apk
+          path: app/build/outputs/apk/offline/release/*.apk
