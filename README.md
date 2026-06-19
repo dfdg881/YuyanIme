@@ -8,7 +8,7 @@
 手机扫码下载地址：
 | Github                           | Gitee                          |
 |----------------------------------|--------------------------------|
-| ![github](./download/github.png) | ![gitee](./download/gitee.png) |
+| ![github](images/download/github.png) | ![gitee](images/download/gitee.png) |
 
 使用过程中任何问题可以创建issues、应用内反馈或通过邮件等方式反馈，本人会根据需求及时修复。
 ## 设计原则：
@@ -73,7 +73,7 @@ git submodule update --init --recursive
 ### 3. 生成签名文件并配置
 进入项目路径，新建证书配置文件夹：`/YuyanIme/keystore`。`keystore`文件夹内放签名文件`*.jks`和配置文件`keystore.properties`。配置文件格式如下：
 ```sh
-storeFile=*.jks
+storeFile=keystore/*.jks
 storePassword=testPassword
 keyAlias=testalias
 keyPassword=testPassword
@@ -102,9 +102,9 @@ keyPassword=testPassword
 | - | - | - |
 | ![表情键盘](./images/emoji.jpg) | ![微信特效](./images/emoji_wechat.jpg) | ![数字行](./images/number_line.jpg) |
 
-| 深色主题 | 设置菜单 |
-| - | - |
-| ![深色主题](./images/dark.jpg) | ![设置菜单](./images/setting.jpg) |
+| 深色主题 | 设置菜单 | 物理键盘 |
+| - | - | - |
+| ![深色主题](./images/dark.jpg) | ![设置菜单](./images/setting.jpg) | ![物理键盘](./images/hardware_keyboard.jpg) |
 
 ## 鸣谢：
 感谢以下优秀的开源社区贡献：
